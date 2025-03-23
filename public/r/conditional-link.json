@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "conditional-link",
+  "type": "registry:component",
+  "title": "Conditional Link",
+  "description": "A simple hello world component",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/conditional-link/index.tsx",
+      "content": "import { LinkProps } from 'next/link'\nimport { PropsWithChildren } from 'react'\n\ntype ConditionalLinkProps = Omit<LinkProps, 'href'> &\n  PropsWithChildren<{\n    href: string | null\n  }>\nexport function ConditionalLink({ href, children, ...props }: ConditionalLinkProps) {\n  if (!href) {\n    return <span {...props}>{children}</span>\n  }\n\n  return (\n    <a\n      {...props}\n      href={href}\n    >\n      {children}\n    </a>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "~/components/conditional-link.tsx"
+    }
+  ]
+}

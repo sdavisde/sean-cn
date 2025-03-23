@@ -83,6 +83,10 @@
   }
 }
 
+.centered {
+  @apply flex items-center justify-center;
+}
+
 [data-rehype-pretty-code-fragment] {
   @apply relative text-white;
 }
