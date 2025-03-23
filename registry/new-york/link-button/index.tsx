@@ -1,8 +1,8 @@
-import { Button, ButtonProps } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { ConditionalLink } from '@/registry/new-york/conditional-link'
 import { LinkProps } from 'next/link'
 
-type LinkButtonProps = ButtonProps & {
+type LinkButtonProps = React.ComponentPropsWithoutRef<typeof Button> & {
   href: string | null
   linkProps?: Omit<LinkProps, 'href'>
 }

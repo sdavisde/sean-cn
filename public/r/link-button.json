@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/new-york/link-button/index.tsx",
-      "content": "import { Button, ButtonProps } from '@/components/ui/button'\nimport { ConditionalLink } from '@/registry/new-york/conditional-link'\nimport { LinkProps } from 'next/link'\n\ntype LinkButtonProps = ButtonProps & {\n  href: string | null\n  linkProps?: Omit<LinkProps, 'href'>\n}\nexport function LinkButton({ href, linkProps, ...props }: LinkButtonProps) {\n  return (\n    <ConditionalLink\n      href={href}\n      {...linkProps}\n    >\n      <Button {...props} />\n    </ConditionalLink>\n  )\n}\n",
+      "content": "import { Button } from '@/components/ui/button'\nimport { ConditionalLink } from '@/registry/new-york/conditional-link'\nimport { LinkProps } from 'next/link'\n\ntype LinkButtonProps = React.ComponentPropsWithoutRef<typeof Button> & {\n  href: string | null\n  linkProps?: Omit<LinkProps, 'href'>\n}\nexport function LinkButton({ href, linkProps, ...props }: LinkButtonProps) {\n  return (\n    <ConditionalLink\n      href={href}\n      {...linkProps}\n    >\n      <Button {...props} />\n    </ConditionalLink>\n  )\n}\n",
       "type": "registry:ui",
       "target": "~/components/ui/link-button.tsx"
     }
